@@ -29,7 +29,7 @@ def extract_boundaries(data, output_folder):
                 file = open(f'./{output_folder}/{frame}.txt','a')
                 boundary = ann['frames'][frame]['bounding_box']
                 class_number = ann['frames'][frame]['instance_id']['value']
-                file.write(f'{class_number} {normalize_H(boundary["x"])} {normalize_W(boundary["y"])} {normalize_H(boundary["h"])} {normalize_W(boundary["w"])}\n')
+                file.write(f'{class_number} {normalize_H(boundary["x"])} {normalize_W(boundary["y"])} {normalize_W(boundary["w"])} {normalize_H(boundary["h"])}\n')
             except:
                 print(f'Error opening file for frame {frame}')
             finally:
